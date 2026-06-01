@@ -1,0 +1,326 @@
+[
+  {
+    "nombre": "9am Dive",
+    "marca": "Afnan",
+    "descripcion": "Un aroma acuático, fresco y revitalizante. Mezcla a la perfección notas cítricas, menta y grosellas con un fondo limpio de maderas y especias, siendo una opción versátil y excelente para el día a día.",
+    "genero": "hombre",
+    "tipo": "acuatico",
+    "categoria": "arabe",
+    "notas": "limón (lima ácida), menta, grosellas negras, pimienta rosa, manzana, cedro, incienso, jengibre, sándalo, pachulí, jazmín",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/xdyV6Pfg/9am-dive-2.png",
+    "bestSeller": true,
+    "recomendado": true,
+    "nuevo": false
+  },
+  {
+    "nombre": "9pm",
+    "marca": "Afnan",
+    "descripcion": "Una fragancia dulce, especiada y vibrante, ideal para destacar en la noche o en climas fríos. Combina una salida llamativa de manzana y canela con un secado profundo y seductor de vainilla y haba tonka.",
+    "genero": "hombre",
+    "tipo": "dulce",
+    "categoria": "arabe",
+    "notas": "manzana, canela, lavanda silvestre, flor de azahar del naranjo, lirio de los valles, vainilla, haba tonka, ámbar, pachulí",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$799 MXN"
+    },
+    "imagen": "https://i.postimg.cc/0jcZHbF6/9PM-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "9 PM Rebel",
+    "marca": "Afnan",
+    "descripcion": "Una propuesta atrevida y nocturna. Destaca por una salida jugosa de piña que se transforma en un aroma denso y envolvente gracias a sus notas de maderas secas, musgo, vainilla y caramelo.",
+    "genero": "unisex",
+    "tipo": "frutal",
+    "categoria": "arabe",
+    "notas": "piña, manzana Granny Smith, mandarina, musgo de roble, cedro, vainilla, madera seca, ámbar gris, caramelo, almizcle",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/C5LWcZJ4/9pm-rebel-1.png",
+    "bestSeller": false,
+    "recomendado": true,
+    "nuevo": false
+  },
+  {
+    "nombre": "Odyssey Mega",
+    "marca": "Armaf",
+    "descripcion": "Un aroma versátil, limpio y energizante. Abre con una explosión fresca de cítricos y menta, evolucionando hacia un corazón afrutado de piña y toques herbales, para cerrar con un fondo elegante de maderas y haba tonka. Ideal para el uso diario o para la oficina.",
+    "genero": "hombre",
+    "tipo": "fresco",
+    "categoria": "arabe",
+    "notas": "naranja, bergamota, limón (lima ácida), jengibre, menta, piña, geranio, enebro, salvia, haba tonka, cedro, vetiver",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$799 MXN"
+    },
+    "imagen": "https://i.postimg.cc/pLsrX8nM/odissey-mega-1.png",
+    "bestSeller": true,
+    "recomendado": true,
+    "nuevo": false
+  },
+  {
+    "nombre": "Odyssey Mandarin Sky",
+    "marca": "Armaf",
+    "descripcion": "Una fragancia envolvente y cremosa que destaca por su equilibrio entre frescura cítrica y dulzura intensa. Su nota de caramelo y haba tonka crea una estela magnética, ideal para climas frescos o eventos nocturnos donde se busca dejar una impresión duradera.",
+    "genero": "unisex",
+    "tipo": "dulce",
+    "categoria": "arabe",
+    "notas": "mandarina, azafrán, salvia, caramelo, haba tonka, vetiver, cedro, ámbar",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$799 MXN"
+    },
+    "imagen": "https://i.postimg.cc/tJst2pQJ/mandarin-sky-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Ishq Al Shuyukh Gold",
+    "marca": "Lattafa",
+    "descripcion": "Una fragancia opulenta, cálida y seductora. Abre con una deliciosa mezcla de caramelo y azafrán que da paso a un corazón profundo y elegante de cuero y haba tonka. Su secado es una base rica y cremosa de vainilla y ámbar, ideal para dejar una estela lujosa.",
+    "genero": "hombre",
+    "tipo": "cuero",
+    "categoria": "arabe",
+    "notas": "caramelo, azafrán, haba tonka, cuero, vainilla, ámbar",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$799 MXN"
+    },
+    "imagen": "https://i.postimg.cc/vTZk5bFM/lataffa-iasgold-2.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Vintage Radio",
+    "marca": "Lattafa",
+    "descripcion": "Una fragancia sofisticada y nostálgica que equilibra notas frutales y amaderadas de forma magistral. Su apertura destaca por una ciruela jugosa acompañada de lavanda, que evoluciona hacia un corazón místico de palo santo, cerrando con una base cremosa de sándalo y ámbar.",
+    "genero": "unisex",
+    "tipo": "amaderado",
+    "categoria": "arabe",
+    "notas": "ciruela, lavanda, salvia, palo santo, sándalo, ámbar, bergamota, pimienta negra",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/ZRKVMHfv/vintage-radio-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": true
+  },
+  {
+    "nombre": "Turathi Blue",
+    "marca": "Afnan",
+    "descripcion": "Una fragancia vibrante, fresca y sofisticada. Destaca por una salida explosiva y luminosa de toronja y mandarina que se asienta sobre un fondo elegante de maderas, ámbar y almizcle. Perfecta para climas cálidos y uso diario, dejando una estela limpia y magnética.",
+    "genero": "hombre",
+    "tipo": "citrico",
+    "categoria": "arabe",
+    "notas": "toronja (pomelo), mandarina, ámbar, notas amaderadas, almizcle, pachulí, especias",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/y81jdvHp/turathi-blue-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Nitro Red",
+    "marca": "Dumont",
+    "descripcion": "Una fragancia explosiva, dulce y adictiva. Destaca por una salida jugosa y vibrante de sandía y manzana, que evoluciona hacia un corazón aromático y cierra con una base cálida y seductora de ámbar y vainilla. Perfecta para llamar la atención y dejar una estela inolvidable.",
+    "genero": "hombre",
+    "tipo": "dulce",
+    "categoria": "arabe",
+    "notas": "sandía, manzana, lavanda, notas acuáticas, ámbar, vainilla, pachulí, musgo de roble",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/7h47RZPQ/nitro-red-1.png",
+    "bestSeller": false,
+    "recomendado": true,
+    "nuevo": false
+  },
+  {
+    "nombre": "Liam Blue Shine",
+    "marca": "Lattafa",
+    "descripcion": "Una fragancia refrescante y marina que evoca la brisa del océano. Abre con notas luminosas de bergamota y romero, dando paso a un corazón profundo de acordes acuáticos y violeta, para asentar sobre un fondo masculino y elegante de ámbar, pachulí y almizcle. Ideal para el uso diario y climas cálidos.",
+    "genero": "hombre",
+    "tipo": "acuatico",
+    "categoria": "arabe",
+    "notas": "bergamota, romero, pimienta, notas marinas, violeta, ámbar, pachulí, almizcle",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/WpfTSf97/liam-blue-shine-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Hawas for Him",
+    "marca": "Rasasi",
+    "descripcion": "Una fragancia vibrante, dulce y acuática con un rendimiento excepcional. Destaca por una salida jugosa de manzana, ciruela y cítricos con un toque de canela, evolucionando hacia un corazón fresco y marino que descansa sobre una base magnética de ámbar gris y maderas.",
+    "genero": "hombre",
+    "tipo": "acuatico",
+    "categoria": "arabe",
+    "notas": "manzana, bergamota, limón (lima ácida), canela, notas acuáticas, ciruela, flor de azahar del naranjo, cardamomo, ámbar gris, almizcle, maderas, pachulí",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$799 MXN"
+    },
+    "imagen": "https://i.postimg.cc/fyXsVMxV/hawas-him-1.png",
+    "bestSeller": true,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "9am Femme",
+    "marca": "Afnan",
+    "descripcion": "Una fragancia luminosa y energizante perfecta para comenzar el día. Se abre con una mezcla cítrica y chispeante que da paso a un corazón delicado de flores blancas y manzana verde, descansando sobre una base limpia y reconfortante de almizcle y maderas.",
+    "genero": "mujer",
+    "tipo": "citrico",
+    "categoria": "arabe",
+    "notas": "limón (lima ácida), mandarina, pimienta rosa, cardamomo, manzana verde, lavanda, flor de azahar del naranjo, rosa, musgo, cedro, pachulí, almizcle",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/SNNVQgqD/9am-femee-1.png",
+    "bestSeller": true,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Yara Tous",
+    "marca": "Lattafa",
+    "descripcion": "Una explosión tropical, dulce y cremosa que te transporta a un paraíso soleado. Destaca por una salida exótica y jugosa de mango, coco y maracuyá, abrazada por un corazón de flores blancas y un secado cálido e irresistible de vainilla y almizcle.",
+    "genero": "mujer",
+    "tipo": "frutal",
+    "categoria": "arabe",
+    "notas": "mango, coco, maracuyá (fruta de la pasión), jazmín, heliotropo, flor de azahar del naranjo, vainilla, cachemira, almizcle",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$799 MXN"
+    },
+    "imagen": "https://i.postimg.cc/j5xn6k8L/yara-tous-1.png",
+    "bestSeller": true,
+    "recomendado": true,
+    "nuevo": false
+  },
+  {
+    "nombre": "Odyssey Candee",
+    "marca": "Armaf",
+    "descripcion": "Una fragancia juguetona, encantadora y golosa. Su apertura es una mezcla frutal y vibrante de fresa, frambuesa y durazno, que evoluciona hacia un corazón dulce y cremoso de caramelo y maracuyá. El secado cálido de ámbar y almizcle deja una estela seductora e irresistible.",
+    "genero": "mujer",
+    "tipo": "dulce",
+    "categoria": "arabe",
+    "notas": "fresa, frambuesa, durazno, bergamota, geranio, caramelo, maracuyá (fruta de la pasión), jazmín, pachulí, ámbar, almizcle",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$799 MXN"
+    },
+    "imagen": "https://i.postimg.cc/J4ZJLJBz/odissey-cande-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Voyage Brown",
+    "marca": "Armaf",
+    "descripcion": "Una fragancia amaderada y cálida, con un toque especiado y elegante. Su apertura aromática de cardamomo, salvia y toronja evoluciona hacia un corazón sofisticado de canela y hojas de violeta. El secado profundo de maderas y haba tonka ofrece una estela reconfortante y masculina.",
+    "genero": "hombre",
+    "tipo": "amaderado",
+    "categoria": "arabe",
+    "notas": "toronja (pomelo), salvia, cardamomo, iris, hojas de violeta, canela, lavanda, notas amaderadas, haba tonka",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/d0yJx0cZ/voyage-brown-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Club de Nuit Intense Man",
+    "marca": "Armaf",
+    "descripcion": "Conocida popularmente como 'la bestia negra', es una fragancia icónica, potente y sumamente masculina. Abre con una explosión cítrica y afrutada dominada por el limón y la piña, para luego revelar un corazón ahumado de abedul y un secado robusto de almizcle y ámbar gris. Destaca por su proyección y duración excepcionales.",
+    "genero": "hombre",
+    "tipo": "citrico",
+    "categoria": "arabe",
+    "notas": "limón (lima ácida), piña, bergamota, grosellas negras, manzana, abedul, jazmín, rosa, almizcle, ámbar gris, pachulí, vainilla",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/PxXF864g/club-nuit-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Khaltaat Al Arabia Royal Delight",
+    "marca": "Lattafa",
+    "descripcion": "Una fragancia exótica, cálida y encantadora. Abre con una deliciosa mezcla afrutada dominada por la manzana, que da paso a un corazón vibrante de especias cálidas como la nuez moscada. Su secado profundo descansa sobre una base elegante de ámbar, almizcle y maderas, dejándo una estela rica y muy versátil.",
+    "genero": "hombre",
+    "tipo": "dulce",
+    "categoria": "arabe",
+    "notas": "manzana, notas afrutadas, nuez moscada, notas especiadas, clavo de olor, ámbar, notas amaderadas, almizcle",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$799 MXN"
+    },
+    "imagen": "https://i.postimg.cc/mk8cgrrK/royal-delight-1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": false
+  },
+  {
+    "nombre": "Khamrah",
+    "marca": "Lattafa",
+    "descripcion": "Conocida como 'la Navidad encapsulada', es una fragancia gourmand, cálida y absolutamente envolvente. Abre con una mezcla rica y especiada de canela y nuez moscada, que da paso a un corazón dulce e irresistible de dátiles y praliné. Su secado es un abrazo reconfortante de vainilla, haba tonka y maderas ambaradas, perfecta para climas fríos y ocasiones especiales.",
+    "genero": "unisex",
+    "tipo": "dulce",
+    "categoria": "arabe",
+    "notas": "canela, nuez moscada, bergamota, dátiles, praliné, nardos, vainilla, haba tonka, Amberwood, mirra, benjuí, maderas",
+    "precios": {
+      "5ml": "$99 MXN",
+      "10ml": "$179 MXN",
+      "completo": "$899 MXN"
+    },
+    "imagen": "https://i.postimg.cc/KzYhycdx/khamrah-1.png",
+    "bestSeller": true,
+    "recomendado": false,
+    "nuevo": false
+  }
+]
