@@ -323,4 +323,40 @@
     "recomendado": false,
     "nuevo": false
   }
+  {
+    "nombre": "Hawas Tropical",
+    "marca": "Rasasi",
+    "descripcion": "Una fragancia exótica y ultra fresca que captura la esencia de un paraíso tropical. Con una apertura vibrante y refrescante de agua de coco y menta, que evoluciona hacia un corazón sofisticado de higo y jengibre, dejando una estela profundamente limpia, magnética y veraniega.",
+    "genero": "hombre",
+    "tipo": "fresco",
+    "categoria": "arabe",
+    "notas": "Agua de coco, Hojas de higuera, Jengibre, Coco, Higo, Menta, Sándalo, Haba tonka, Almizcle",
+    "precios": {
+      "5ml": "$129 MXN",
+      "10ml": "$199 MXN",
+      "completo": "$1249 MXN"
+    },
+    "imagen": "https://i.postimg.cc/vZky6kJc/hawas-tropical1.png",
+    "bestSeller": false,
+    "recomendado": false,
+    "nuevo": true
+  },
+  {
+    "nombre": "Le Male Elixir",
+    "marca": "Jean Paul Gaultier",
+    "descripcion": "Una fragancia intensamente adictiva y ardiente. Destaca por su sensual mezcla de miel, tabaco y vainilla sobre un toque clásico de lavanda y menta, creando una estela dulce, cálida y profundamente seductora.",
+    "genero": "hombre",
+    "tipo": "dulce",
+    "categoria": "diseñador",
+    "notas": "Lavanda, Menta, Vainilla, Benjuí, Miel, Haba tonka, Tabaco",
+    "precios": {
+      "5ml": "$199 MXN",
+      "10ml": "$349 MXN",
+      "completo": "$2449 MXN"
+    },
+    "imagen": "https://i.postimg.cc/5ybQW6pz/jpg-elixir1.png",
+    "bestSeller": false,
+    "recomendado": true,
+    "nuevo": false
+  },
 ]

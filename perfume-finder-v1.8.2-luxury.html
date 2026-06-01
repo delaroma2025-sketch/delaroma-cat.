@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELAROMA | Maison de Parfum v1.9.1</title>
+    <style>
+        @import url('https://fonts.googleapis.com own/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        :root {
+            --color-bg: #050505;
+            --color-glass: rgba(15, 15, 15, 0.85);
+            --color-glass-border: rgba(255, 255, 255, 0.08);
+            --color-glass-highlight: rgba(255, 255, 255, 0.12);
+            --color-accent: #d4b475;
+            --color-accent-glow: rgba(212, 180, 117, 0.3);
+            --color-text-main: #ffffff;
+            --color-text-muted: #a1a1a6;
+
+            --font-display: 'Bodoni Moda', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --font-accent: 'Playfair Display', serif;
+
+            --radius-ios: 32px;
+            --transition-liquid: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .liquid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            animation: drift 20s infinite ease-in-out;
+        }
+
+        .orb-1 { width: 500px; height: 500px; background: var(--color-accent); top: -10%; left: -10%; opacity: 0.3; }
+        .orb-2 { width: 600px; height: 600px; background: #1a1a40; bottom: -20%; right: -10%; opacity: 0.4; animation-delay: -5s; }
+        .orb-3 { width: 400px; height: 400px; background: #3a2a1a; top: 30%; left: 40%; opacity: 0.3; animation-delay: -10s; }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, 100px) scale(1.1); }
+            66% { transform: translate(-30px, 50px) scale(0.9); }
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-accent);
+            text-align: center;
+        }
+
+        header {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 12vw, 8rem);
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(180deg, #fff 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: reveal 1.8s var(--transition-liquid) forwards;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--color-text-muted);
+            max-width: 600px;
+            opacity: 0;
+            animation: reveal 1.8s var(--transition-liquid) 0.4s forwards;
+        }
+
+        @keyframes reveal { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* FIXED: Luxury Curation Bar - Boutique Grid */
+        .curation-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--color-glass);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid var(--color-glass-border);
+            padding: 30px 0;
+            margin-bottom: 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: var(--transition-liquid);
+        }
+
+        .filter-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .filter-main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .filter-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .filter-column label {
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-accent);
+            text-align: left;
+            border-left: 2px solid var(--color-accent);
+            padding-left: 10px;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-start;
+        }
+
+        .filter-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--color-glass-border);
+            color: var(--color-text-muted);
+            padding: 8px 16px;
+            font-size: 0.6rem;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: var(--transition-liquid);
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255,255,255,0.1);
+            color: var(--color-text-main);
+            border-color: var(--color-accent);
+        }
+
+        .filter-btn.active {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-bg);
+            font-weight: 600;
+            box-shadow: 0 0 15px var(--color-accent-glow);
+        }
+
+        .search-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-glass-border);
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--color-glass-border);
+            border-radius: 30px;
+            color: var(--color-text-main);
+            padding: 14px 25px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition-liquid);
+            text-align: center;
+        }
+
+        .search-box:focus {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px var(--color-accent-glow);
+        }
+
+        /* Gallery */
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--color-glass-border);
+        }
+
+        .gallery-count {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+        }
+
+        .perfume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 50px 30px;
+        }
+
+        .perfume-card {
+            position: relative;
+            background: var(--color-glass);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--color-glass-border);
+            border-radius: var(--radius-ios);
+            padding: 30px;
+            transition: var(--transition-liquid);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 0 0 1px var(--color-glass-highlight);
+        }
+
+        .perfume-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--color-accent);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 20px var(--color-accent-glow);
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            font-size: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: var(--color-accent);
+            color: var(--color-bg);
+            border-radius: 10px;
+            letter-spacing: 0.1em;
+        }
+
+        .badge.new { background: #fff; color: #000; }
+
+        .img-container {
+            position: relative;
+            aspect-ratio: 1/1;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .perfume-img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            transition: var(--transition-liquid);
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
+        }
+
+        .perfume-card:hover .perfume-img {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .perfume-info { text-align: center; }
+
+        .perfume-brand {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--color-accent);
+            margin-bottom: 8px;
+        }
+
+        .perfume-name {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .perfume-desc {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .price-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .price-cell {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--color-glass-border);
+            padding: 12px 5px;
+            text-align: center;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: var(--transition-liquid);
+        }
+
+        .price-cell:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            border-color: var(--color-accent);
+        }
+
+        .price-label {
+            display: block;
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 4px;
+        }
+
+        .price-value {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: block;
+            padding: 16px;
+            background: var(--color-accent);
+            color: var(--color-bg);
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            border-radius: 20px;
+            transition: var(--transition-liquid);
+            box-shadow: 0 10px 20px var(--color-accent-glow);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px var(--color-accent-glow);
+            filter: brightness(1.1);
+        }
+
+        /* Sales Boost Section */
+        .sales-boost-section {
+            margin: 120px 0;
+            padding: 80px 0;
+            background: var(--color-glass);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-top: 1px solid var(--color-glass-border);
+            border-bottom: 1px solid var(--color-glass-border);
+            width: 100%;
+        }
+
+        .sales-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            text-align: center;
+        }
+
+        .sales-title {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--color-accent);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .sales-text {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 50px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sales-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .sales-card {
+            padding: 40px 30px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--color-glass-border);
+            border-radius: var(--radius-ios);
+            transition: var(--transition-liquid);
+        }
+
+        .sales-card:hover {
+            border-color: var(--color-accent);
+            background: rgba(255,255,255,0.07);
+        }
+
+        .sales-card h4 {
+            font-family: var(--font-display);
+            color: var(--color-accent);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        .sales-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        .maison-footer {
+            margin-top: 120px;
+            padding: 80px 0;
+            border-top: 1px solid var(--color-glass-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-item h3 {
+            font-family: var(--font-display);
+            color: var(--color-accent);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .footer-item p {
+            color: var(--color-text-muted);
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .filter-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .filter-options {
+                overflow-x: auto;
+                display: flex;
+                white-space: nowrap;
+                padding-bottom: 5px;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+            }
+            .filter-btn {
+                flex: 0 0 auto;
+            }
+            .perfume-grid { grid-template-columns: 1fr; gap: 40px 0; }
+            header { height: 80vh; }
+            .hero-title { font-size: 3.5rem; }
+            .curation-bar { top: 0; padding: 20px 0; }
+            .gallery-header { flex-direction: column; align-items: center; gap: 15px; text-align: center; }
+            .price-matrix { grid-template-columns: 1fr; }
+            .price-cell { display: flex; justify-content: space-between; padding: 12px 20px; }
+            .price-label { margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="liquid-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header>
+        <h1 class="hero-title">DELAROMA</h1>
+        <p class="hero-subtitle">Experiencia olfativa de alta gama. Curaduría de lujo para el coleccionista moderno.</p>
+    </header>
+
+    <div class="curation-bar">
+        <div class="container">
+            <div class="filter-wrapper">
+                <div class="filter-main-grid">
+                    <div class="filter-column">
+                        <label>Tipo Perfume</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="categoria" data-value="todos">Todos</button>
+                            <button class="filter-btn" data-filter="categoria" data-value="arabe">Árabe</button>
+                            <button class="filter-btn" data-filter="categoria" data-value="diseñador">Diseñador</button>
+                            <button class="filter-btn" data-filter="categoria" data-value="nicho">Nicho</button>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <label>Selección</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="especial" data-value="todos">Todos</button>
+                            <button class="filter-btn" data-filter="especial" data-value="bestSeller">Best Sellers</button>
+                            <button class="filter-btn" data-filter="especial" data-value="recomendado">Recomendados</button>
+                            <button class="filter-btn" data-filter="especial" data-value="nuevo">Recientes</button>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <label>Perfil</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="genero" data-value="todos">Todos</button>
+                            <button class="filter-btn" data-filter="genero" data-value="hombre">Hombre</button>
+                            <button class="filter-btn" data-filter="genero" data-value="mujer">Mujer</button>
+                            <button class="filter-btn" data-filter="genero" data-value="unisex">Unisex</button>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <label>Familia</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="tipo" data-value="todos">Todas</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="dulce">Gourmand</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="acuatico">Acuático</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="floral">Floral</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="amaderado">Amaderado</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="citrico">Cítrico</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="oriental">Oriental</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="frutal">Frutal</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="cuero">Cuero</button>
+                            <button class="filter-btn" data-filter="tipo" data-value="fresco">Fresco</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-section">
+                    <div class="container" style="padding:0;">
+                        <input type="text" id="noteSearch" class="search-box" placeholder="Busca por notas: Vainilla, Oud, Jazmín...">
+                    </div>
+                </div>
+            </div>
+        </div}
+    </div>
+
+    <div class="container">
+        <div class="gallery-header">
+            <h2 class="section-title">La Colección</h2>
+            <span class="gallery-count"><span id="count">0</span> Fragancias</span>
+        </div>
+
+        <div id="perfumeGrid" class="perfume-grid"></div>
+    </div>
+
+    <section class="sales-boost-section">
+        <div class="sales-container">
+            <h2 class="sales-title">El Valor del Decant</h2>
+            <p class="sales-text">Descubre la alta perfumería sin comprometer tu inversión. Los decants permiten experimentar la evolución real de una fragancia en tu piel antes de adquirir la pieza completa.</p>
+            <div class="sales-grid">
+                <div class="sales-card">
+                    <h4 class="section-title" style="font-size: 1.1rem; text-align: left;">Prueba Real</h4>
+                    <p>Analiza la química de tu piel y la duración real del aroma.</p>
+                </div>
+                <div class="sales-card">
+                    <h4 class="section-title" style="font-size: 1.1rem; text-align: left;">Ahorro Inteligente</h4>
+                    <p>Evita compras impulsivas basadas en muestras sintéticas.</p>
+                </div>
+                <div class="sales-card">
+                    <h4 class="section-title" style="font-size: 1.1rem; text-align: left;">Colección Curada</h4>
+                    <p>Accede a fragancias de nicho y lujo por una fracción del precio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container maison-footer">
+        <div class="footer-grid">
+            <div class="footer-item">
+                <h3 class="section-title">Familias</h3>
+                <p>Clasificación basada en notas dominantes. Desde la energía cítrica hasta la profundidad oriental.</p>
+            </div>
+            <div class="footer-item">
+                <h3 class="section-title">Pirámide</h3>
+                <p>Salida (impresión), Corazón (alma) y Fondo (recuerdo). La danza del aroma en el tiempo.</p>
+            </div>
+            <div class="footer-item">
+                <h3 class="section-title">Saber</h3>
+                <p>Buscamos la armonía perfecta entre la esencia, la ocasión y la química personal.</p>
+            </div>
+        </div>
+    </footer >
+
+    <script>
+        const CONFIG = {
+            DATA_URL: 'perfumes.json',
+            WHATSAPP_NUMBER: '526624452665',
+            WHATSAPP_MESSAGE: 'Hola! Me gustaría consultar la siguiente opción de: '
+        };
+
+        let perfumes = [];
+        let filtros = { genero: 'todos', tipo: 'todos', especial: 'todos', categoria: 'todos', nota: '' };
+
+        async function loadData() {
+            try {
+                const response = await fetch(CONFIG.DATA_URL);
+                if (!response.ok) throw new Error('Error al cargar la colección');
+                const data = await response.json();
+                perfumes = Array.isArray(data) ? data : (data.record ? (Array.isArray(data.record) ? data.record : [data.record]) : [data]);
+                renderPerfumes(perfumes);
+            } catch (error) {
+                console.error("Error loading perfumes:", error);
+            }
+        }
+
+        function setupEventListeners() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filterType = this.dataset.filter;
+                    const filterValue = this.dataset.value;
+                    document.querySelectorAll(`[data-filter="${filterType}"]`).forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filtros[filterType] = filterValue;
+                    renderPerfumes(filterPerfumes());
+                });
+            });
+            document.getElementById('noteSearch').addEventListener('input', e => {
+                filtros.nota = e.target.value.toLowerCase();
+                renderPerfumes(filterPerfumes());
+            });
+        }
+
+        function filterPerfumes() {
+            return perfumes.filter(p => {
+                const gen = (p.gender || p.genero || 'unisex').toLowerCase();
+                const typ = (p.type || p.tipo || 'fresco').toLowerCase();
+                const cat = (p.category || p.categoria || 'arabe').toLowerCase();
+                const nts = (p.notes || p.notas || "").toLowerCase();
+                const desc = (p.description || p.descripcion || "").toLowerCase();
+
+                if (filtros.genero !== 'todos' && gen !== filtros.genero) return false;
+                if (filtros.tipo !== 'todos' && typ !== filtros.tipo) return false;
+                if (filtros.categoria !== 'todos' && cat !== filtros.categoria) return false;
+                if (filtros.nota && !nts.includes(filtros.nota) && !desc.includes(filtros.nota)) return false;
+
+                if (filtros.especial !== 'todos') {
+                    if (filtros.especial === 'bestSeller' && !p.bestSeller) return false;
+                    if (filtros.especial === 'recomendado' && !p.recomendado) return false;
+                    if (filtros.especial === 'nuevo' && !p.nuevo) return false;
+                }
+                return true;
+            });
+        }
+
+        function renderPerfumes(list) {
+            const grid = document.getElementById('perfumeGrid');
+            document.getElementById('count').textContent = list.length;
+
+            if (list.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; padding: 100px 0; text-align:center; font-family: var(--font-display); color: var(--color-text-muted);">No se encontraron fragancias que coincidan con su búsqueda.</div>';
+                return;
+            }
+
+            grid.innerHTML = list.map((p, index) => {
+                const name = p.name || p.nombre;
+                const precios = p.precios || { "5ml": "Consultar", "10ml": "Consultar", "completo": "Consultar" };
+
+                let badge = '';
+                if (p.bestSeller) badge = '<div class="badge">Best Seller</div>';
+                else if (p.nuevo) badge = '<div class="badge new">Nuevo</div>';
+
+                return `
+                    <div class="perfume-card" style="animation: reveal ${0.4 + (index * 0.1)}s var(--transition-liquid) forwards">
+                        ${badge}
+                        <div class="img-container">
+                            <img src="${p.image_url || p.image || p.imagen || 'https://via.placeholder.com/150?text=Luxe'}" class="perfume-img" alt="${name}">
+                        </div>
+                        <div class="perfume-info">
+                            <div class="perfume-brand">${p.brand || p.marca}</div>
+                            <div class="perfume-name">${name}</div>
+                            <div class="perfume-desc">${p.description || p.descripcion}</div>
+
+                            <div class="price-matrix">
+                                <div class="price-cell" onclick="window.open('https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIG.WHATSAPP_MESSAGE + name + ' (5ml)')}', '_blank')">
+                                    <span class="price-label">5ml</span>
+                                    <span class="price-value">${precios['5ml']}</span>
+                                </div>
+                                <div class="price-cell" onclick="window.open('https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIG.WHATSAPP_MESSAGE + name + ' (10ml)')}', '_blank')">
+                                    <span class="price-label">10ml</span>
+                                    <span class="price-value">${precios['10ml']}</span>
+                                </div>
+                                <div class="price-cell" onclick="window.open('https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIG.WHATSAPP_MESSAGE + name + ' (Full)')}', '_blank')">
+                                    <span class="price-label">Full</span>
+                                    <span class="price-value">${precios['completo']}</span>
+                                </div>
+                            </div>
+
+                            <a href="https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIG.WHATSAPP_MESSAGE + name)}" target="_blank" class="cta-button">Consultar disponibilidad</a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function init() {
+            setupEventListeners();
+            loadData();
+        }
+        init();
+    </script>
+</body
+</html
+>
