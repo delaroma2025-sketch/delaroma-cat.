@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELAROMA | Maison de Parfum</title>
+    <title>DELAROMA | Maison de Parfum v1.9</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
         :root {
             --color-bg: #050505;
-            --color-glass: rgba(20, 20, 20, 0.6);
-            --color-glass-border: rgba(255, 255, 255, 0.08);
+            --color-glass: rgba(20, 20, 20, 0.8);
+            --color-glass-border: rgba(255, 255, 255, 0.1);
             --color-glass-highlight: rgba(255, 255, 255, 0.15);
             --color-accent: #d4b475;
             --color-accent-glow: rgba(212, 180, 117, 0.3);
@@ -27,24 +27,24 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Correct way to prevent horizontal scroll without killing sticky */
             background-color: var(--color-bg);
             color: var(--color-text-main);
             font-family: var(--font-body);
             line-height: 1.6;
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
         }
 
-        /* Liquid Glass Background Elements */
+        /* Liquid Glass Background */
         .liquid-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             filter: blur(80px);
             opacity: 0.6;
-            overflow: hidden;
+            pointer-events: none;
         }
 
         .orb {
@@ -63,7 +63,6 @@
             66% { transform: translate(-30px, 50px) scale(0.9); }
         }
 
-        /* Typography */
         .section-title {
             font-family: var(--font-display);
             text-transform: uppercase;
@@ -113,19 +112,18 @@
             padding: 0 30px;
         }
 
-        /* Liquid Glass Filters */
+        /* FIX: Sticky Bar - Guaranteed Position */
         .curation-bar {
             position: sticky;
-            top: 20px;
-            z-index: 100;
-            margin: 0 auto 80px;
-            max-width: 1200px;
+            top: 0;
+            z-index: 1000;
             background: var(--color-glass);
             backdrop-filter: blur(30px) saturate(180%);
-            border: 1px solid var(--color-glass-border);
-            border-radius: var(--radius-ios);
-            padding: 25px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 1px var(--color-glass-highlight);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid var(--color-glass-border);
+            padding: 25px 0;
+            margin-bottom: 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: var(--transition-liquid);
         }
 
@@ -133,6 +131,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 25px;
+            align-items: end;
         }
 
         .filter-column label {
@@ -205,7 +204,7 @@
             box-shadow: 0 0 0 4px var(--color-accent-glow);
         }
 
-        /* Glass Gallery */
+        /* Gallery */
         .gallery-header {
             display: flex;
             justify-content: space-between;
@@ -231,6 +230,7 @@
             position: relative;
             background: var(--color-glass);
             backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid var(--color-glass-border);
             border-radius: var(--radius-ios);
             padding: 30px;
@@ -367,22 +367,23 @@
             filter: brightness(1.1);
         }
 
-        /* Sales Boost Section */
+        /* FIX: Sales Boost Section Alignment */
         .sales-boost-section {
             margin: 120px 0;
             padding: 80px 0;
-            text-align: center;
             background: var(--color-glass);
             backdrop-filter: blur(40px);
-            border-radius: var(--radius-ios);
-            border: 1px solid var(--color-glass-border);
-            box-shadow: inset 0 0 0 1px var(--color-glass-highlight);
+            -webkit-backdrop-filter: blur(40px);
+            border-top: 1px solid var(--color-glass-border);
+            border-bottom: 1px solid var(--color-glass-border);
+            width: 100%;
         }
 
-        .sales-content {
-            max-width: 900px;
+        .sales-container {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 30px;
+            text-align: center;
         }
 
         .sales-title {
@@ -398,16 +399,19 @@
             color: var(--color-text-muted);
             margin-bottom: 50px;
             line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .sales-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .sales-card {
-            padding: 30px;
+            padding: 40px 30px;
             background: rgba(255,255,255,0.03);
             border: 1px solid var(--color-glass-border);
             border-radius: var(--radius-ios);
@@ -424,12 +428,13 @@
             color: var(--color-accent);
             margin-bottom: 15px;
             text-transform: uppercase;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         .sales-card p {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--color-text-muted);
+            line-height: 1.8;
         }
 
         .maison-footer {
@@ -464,7 +469,7 @@
             .perfume-grid { grid-template-columns: 1fr; gap: 40px 0; }
             header { height: 80vh; }
             .hero-title { font-size: 3.5rem; }
-            .curation-bar { top: 10px; padding: 20px; }
+            .curation-bar { top: 0; padding: 20px 0; }
             .gallery-header { flex-direction: column; align-items: center; gap: 15px; text-align: center; }
             .price-matrix { grid-template-columns: 1fr; }
             .price-cell { display: flex; justify-content: space-between; padding: 12px 20px; }
@@ -472,7 +477,7 @@
         }
     </style>
 </head>
-<body class="liquid-glass">
+<body>
 
     <div class="liquid-bg">
         <div class="orb orb-1"></div>
@@ -549,21 +554,21 @@
         <div id="perfumeGrid" class="perfume-grid"></div>
     </div>
 
-    <section class="container sales-boost-section">
-        <div class="sales-content">
+    <section class="sales-boost-section">
+        <div class="sales-container">
             <h2 class="sales-title">El Valor del Decant</h2>
             <p class="sales-text">Descubre la alta perfumería sin comprometer tu inversión. Los decants permiten experimentar la evolución real de una fragancia en tu piel antes de adquirir la pieza completa.</p>
             <div class="sales-grid">
                 <div class="sales-card">
-                    <h4>Prueba Real</h4>
+                    <h4 class="section-title" style="font-size: 1.1rem; text-align: left;">Prueba Real</h4>
                     <p>Analiza la química de tu piel y la duración real del aroma.</p>
                 </div>
                 <div class="sales-card">
-                    <h4>Ahorro Inteligente</h4>
+                    <h4 class="section-title" style="font-size: 1.1rem; text-align: left;">Ahorro Inteligente</h4>
                     <p>Evita compras impulsivas basadas en muestras sintéticas.</p>
                 </div>
                 <div class="sales-card">
-                    <h4>Colección Curada</h4>
+                    <h4 class="section-title" style="font-size: 1.1rem; text-align: left;">Colección Curada</h4>
                     <p>Accede a fragancias de nicho y lujo por una fracción del precio.</p>
                 </div>
             </div>
@@ -585,7 +590,7 @@
                 <p>Buscamos la armonía perfecta entre la esencia, la ocasión y la química personal.</p>
             </div>
         </div>
-    </footer>
+    </footer >
 
     <script>
         const CONFIG = {
@@ -704,5 +709,6 @@
         }
         init();
     </script>
-</body>
-</html>
+</body
+</html
+>
